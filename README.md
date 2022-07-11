@@ -1,4 +1,4 @@
-# Sample Project
+# isce_sat2
 
 This is as an example on how teams can structure their project repositories. Thanks to Lindsey Heagey and Joachim Meyer for the template!
 

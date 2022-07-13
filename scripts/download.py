@@ -14,14 +14,13 @@ UAVSAR CODE TO GET COHERENCE AND BOUNDING BOX GEOJSON
 """
 
 def download_uavsar(args):
-    for poly in poly_list:
         """
         use code from Jack's group
         """
         pass
         return 
     
-def download_icesat2(poly_dict, directory='/tmp/is2', conf=2, length=100.0, res=50.0, verbose=False):
+def download_icesat2(poly_dict, directory='/tmp/is2', length=100.0, res=50.0, verbose=False, confidence = False):
     os.makedirs(directory, exist_ok=True)
     icesat2.init("icesat2sliderule.org", verbose=verbose)
     for name, poly in poly_dict.items():
@@ -33,7 +32,10 @@ def download_icesat2(poly_dict, directory='/tmp/is2', conf=2, length=100.0, res=
             # print(poly.head())# poly=gpd.read_file(poly).to_file('myshpfile.geojson', driver='GeoJSON')
             poly = icesat2.toregion(gpd.GeoDataFrame([poly], index = [0], columns = ['geometry']))[0]
             result = gpd.GeoDataFrame()
-            for conf in range(2,5):
+            conf_range = range(2,5)
+            if not confidence:
+                conf_range = [4]
+            for conf in conf_range:
                 parms = {"poly": poly,
                 "srt": icesat2.SRT_LAND,
                 "atl08_class": "atl08_ground",
@@ -63,6 +65,7 @@ if __name__ == '__main__':
 #     in_dict = {'site1':file1,'site2':file2}
     #from download uavsar we will get a dictionary like {site:geojson or shp}
     # poly_dict = download_uavsar(args)
+    types = {'confidence':{'res': 50, 'len':100, 'conf':True}, 'sd':{'res': 20, 'len':40, 'conf':False}}
     polys = pickle.load(open('/Users/zachkeskinen/Documents/isce_sat2/data/bounds.pkl', 'rb'))
-    
-    download_icesat2(polys)
+    for k, v in types.items():
+        download_icesat2(polys, directory = os.path.join('/tmp/is2', k), res = v['res'], length = v['len'], confidence = v['conf'])

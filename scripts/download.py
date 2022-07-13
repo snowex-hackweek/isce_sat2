@@ -4,6 +4,8 @@ import numpy as np
 import geopandas as gpd
 import contextily as cx
 import os
+import warnings
+warnings.simplefilter(action='ignore', category=FutureWarning)
 
 """
 UAVSAR CODE TO GET COHERENCE AND BOUNDING BOX GEOJSON
@@ -20,18 +22,20 @@ def download_icesat2(poly_list, directory='/tmp/is2', conf=2, length=100.0, res=
     os.makedirs(directory, exist_ok=True)
     icesat2.init("icesat2sliderule.org", verbose=False)
     for name,poly in poly_dict.items():
-        parms = {"poly": poly,
-        "srt": icesat2.SRT_LAND,
-        "atl08_class": "atl08_ground",
-        "cnf": [conf],
-        "len": length,
-        "res": res,
-        "maxi": 1,
-        "t0":'2018-10-01T00:00:00Z',
-        "t1":'2022-04-30T00:00:00Z'}
-
-        rsps = icesat2.atl06p(parms)
-    rsps.to_file(os.path.join(directory,f'{name}_atl06sr.geojson'))
+        res = gpd.GeoDataFrame()
+        for conf in range(2,5):
+            parms = {"poly": poly,
+            "srt": icesat2.SRT_LAND,
+            "atl08_class": "atl08_ground",
+            "cnf": [conf],
+            "len": length,
+            "res": res,
+            "maxi": 1,
+            "t0":'2018-10-01T00:00:00Z',
+            "t1":'2022-04-30T00:00:00Z'}
+            rsps = icesat2.atl06p(parms)
+            res = res.append(rsps)
+    res.to_file(os.path.join(directory,f'{name}_atl06sr.geojson'))
                             
 
 if __name__ == '__main__':

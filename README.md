@@ -1,6 +1,6 @@
 # isce_sat2
 
-`isce_sat2` is a project to explore the data fusion possibilities between the ICESat-2 space-based lidar, UAVSAR, and future NISAR based L-band InSAR for snow water storage measurements. 
+`isce_sat2` (a play on the InSAR processing software [ISCE2](https://github.com/isce-framework/isce2) and ICESat-2) is a project to explore the data fusion possibilities between the ICESat-2 space-based lidar, UAVSAR, and future NISAR based L-band InSAR for snow water storage measurements. 
 
 ## Collaborators
 (Add you names and affiliations below)

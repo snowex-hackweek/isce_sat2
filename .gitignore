@@ -111,3 +111,6 @@ venv.bak/
 *.tif
 *.tiff
 *.grd
+
+# os - mac
+*.DS_Store

@@ -1,6 +1,6 @@
 # isce_sat2
 
-`isce_sat2` is a project to explore the data fusion possibilities between the ICESat2 space-based lidar and InSAR instruments for snow water storage measurements. 
+`isce_sat2` is a project to explore the data fusion possibilities between the ICESat-2 space-based lidar, UAVSAR, and future NISAR based L-InSAR for snow water storage measurements. 
 
 ## Collaborators
 (Add you names and affiliations below)
@@ -17,11 +17,11 @@
 
 ## Research Motivations
 
-1. How can ICESat-2 improve our ability to use Uavsar/NiSAR?
+1. How can ICESat-2 improve our ability to use UAVSAR/NISAR?
 2. Can we combine these instruments to improve our ability to estimate snow water storage?
 3. Learn more about our respective instruments and get to work together!
 
-## What are Uavsar and ICESat2?
+## What are UAVSAR and ICESat-2?
 
 [UAVSAR](https://uavsar.jpl.nasa.gov/education/what-is-uavsar.html) is a low frequency plane-based synthetic aperature radar. UAVSAR stands for "Uninhabited Aerial Vehicle Synthetic Aperature Radar". It captures imagery using a L-band radar. This low frequency means it can penetrate into and through clouds, vegetation, and snow.
 
@@ -29,11 +29,11 @@
 
 ## Specific Questions
 
-1. Can we use ICESat2 to constrain phase change in UAVSAR pairs?
-2. How well do ICESat2 snow depths compare to UAVSAR?
-3. How often does ICESat2 intersect with itself and UAVSAR image pairs?
+1. Can we use ICESat-2 to constrain phase change in UAVSAR pairs?
+2. How well do ICESat-2 snow depths compare to UAVSAR?
+3. How often does ICESat-2 intersect with itself and UAVSAR image pairs?
 4. Is this kind of comparison scaleable?
-5. How does Uavsar coherence compare with ICESat-2 confidence?
+5. How does UAVSAR coherence compare with ICESat-2 confidence?
 
 
 ## Contents

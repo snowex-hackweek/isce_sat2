@@ -34,6 +34,7 @@ def download_icesat2(poly_list, directory='/tmp/is2', conf=2, length=100.0, res=
             "t0":'2018-10-01T00:00:00Z',
             "t1":'2022-04-30T00:00:00Z'}
             rsps = icesat2.atl06p(parms)
+            rsps['confidence'] = conf
             res = res.append(rsps)
     res.to_file(os.path.join(directory,f'{name}_atl06sr.geojson'))
                             

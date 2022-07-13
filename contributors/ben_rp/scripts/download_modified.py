@@ -19,11 +19,12 @@ def download_uavsar(args):
         """
         pass
         return 
-    
+
 def download_icesat2(poly_dict, directory='/tmp/is2', length=100.0, res=50.0, verbose=False, confidence = False):
     os.makedirs(directory, exist_ok=True)
     icesat2.init("icesat2sliderule.org", verbose=verbose)
     for name, poly in poly_dict.items():
+        print('working on: ', f'{name},{poly}')
         out_fp = os.path.join(directory,f'{name}_atl06sr.pkl')
         if not os.path.exists(out_fp):
             print(f'Starting on {name}'.center(50, '-'))
@@ -55,17 +56,20 @@ def download_icesat2(poly_dict, directory='/tmp/is2', length=100.0, res=50.0, ve
                 pickle.dump(result, f)
         else:
             print(f'{name} already exists. Skipping...')
-                            
+
 
 if __name__ == '__main__':
-    
+
 #     file1 =  '/home/jovyan/isce_sat2/contributors/ben_rp/data/vectors/Study-sites.shp'
 #     file2 =  '/home/jovyan/isce_sat2/contributors/ben_rp/data/vectors/Study-sites.shp'
-    
+
 #     in_dict = {'site1':file1,'site2':file2}
     #from download uavsar we will get a dictionary like {site:geojson or shp}
     # poly_dict = download_uavsar(args)
     types = {'confidence':{'res': 50, 'len':100, 'conf':True}, 'sd':{'res': 20, 'len':40, 'conf':False}}
-    polys = pickle.load(open('../data/bounds.pkl', 'rb'))
+    polys = pickle.load(open('/home/jovyan/isce_sat2/data/bounds.pkl', 'rb'))
+    # polys = {k.replace(',','_'):v for k,v in polys.items()}
+    # polys = {k:v for k,v in polys.items() if (k == 'Grand Mesa_ CO')|(k == 'Fraser_ CO')}
+    # print(polys.keys())
     for k, v in types.items():
-        download_icesat2(polys, directory = os.path.join('/home/jovyan/isce_sat2/data/', k), res = v['res'], length = v['len'], confidence = v['conf'])
+        download_icesat2(polys, directory = os.path.join('/home/jovyan/isce_sat2/contributors/ben_rp/data/', k), res = v['res'], length = v['len'], confidence = v['conf'])

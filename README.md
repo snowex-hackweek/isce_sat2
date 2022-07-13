@@ -1,12 +1,12 @@
 # isce_sat2
 
-Isce_Sat2 is a project to explore the data fusion possibilities between the ICESat2 space-based lidar and InSAR instruments for snow water storage measurements. 
+`isce_sat2` is a project to explore the data fusion possibilities between the ICESat2 space-based lidar and InSAR instruments for snow water storage measurements. 
 
 ## Collaborators
 (Add you names and affiliations below)
 - Hannah Besso (University of Washington)
 - Zach Keskinen (Boise State University)
-- Jack
+- Jack Tarricone (University of Nevada, Reno)
 - Naheem
 - Young
 - Ben
@@ -17,7 +17,7 @@ Isce_Sat2 is a project to explore the data fusion possibilities between the ICES
 
 ## Research Motivations
 
-1. How can IceSAT-2 improve our ability to use Uavsar/NiSAR?
+1. How can ICESat-2 improve our ability to use Uavsar/NiSAR?
 2. Can we combine these instruments to improve our ability to estimate snow water storage?
 3. Learn more about our respective instruments and get to work together!
 

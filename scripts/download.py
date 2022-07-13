@@ -5,6 +5,8 @@ import geopandas as gpd
 import contextily as cx
 import os
 import warnings
+import pickle 
+
 warnings.simplefilter(action='ignore', category=FutureWarning)
 
 """
@@ -16,12 +18,18 @@ def download_uavsar(args):
         """
         use code from Jack's group
         """
+        pass
         return 
     
-def download_icesat2(poly_list, directory='/tmp/is2', conf=2, length=100.0, res=50.0):
+def download_icesat2(poly_dict, directory='/tmp/is2', conf=2, length=100.0, res=50.0):
     os.makedirs(directory, exist_ok=True)
     icesat2.init("icesat2sliderule.org", verbose=False)
-    for name,poly in poly_dict.items():
+    for name, poly in poly_dict.items():
+        
+        #temp- convert shapefile to geojson
+        # poly = gpd.read_file(poly).geometry.exterior
+        # print(poly.head())# poly=gpd.read_file(poly).to_file('myshpfile.geojson', driver='GeoJSON')
+        poly = icesat2.toregion(gpd.GeoDataFrame([poly], index = [0], columns = ['geometry']))[0]
         res = gpd.GeoDataFrame()
         for conf in range(2,5):
             parms = {"poly": poly,
@@ -36,9 +44,19 @@ def download_icesat2(poly_list, directory='/tmp/is2', conf=2, length=100.0, res=
             rsps = icesat2.atl06p(parms)
             rsps['confidence'] = conf
             res = res.append(rsps)
+    name = name.replace(' ','')
+    name = name.replace(',','')
     res.to_file(os.path.join(directory,f'{name}_atl06sr.geojson'))
                             
 
 if __name__ == '__main__':
-    poly_dict = download_uavsar(args)
-    download_icesat2(poly_list)
+    
+#     file1 =  '/home/jovyan/isce_sat2/contributors/ben_rp/data/vectors/Study-sites.shp'
+#     file2 =  '/home/jovyan/isce_sat2/contributors/ben_rp/data/vectors/Study-sites.shp'
+    
+#     in_dict = {'site1':file1,'site2':file2}
+    #from download uavsar we will get a dictionary like {site:geojson or shp}
+    # poly_dict = download_uavsar(args)
+    polys = pickle.load(open('/home/jovyan/isce_sat2/data/bounds.pkl', 'rb'))
+    
+    download_icesat2(polys)

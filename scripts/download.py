@@ -58,13 +58,12 @@ def download_icesat2(poly_dict, directory='/tmp/is2', length=100.0, res=50.0, ve
 
 if __name__ == '__main__':
     
-#     file1 =  '/home/jovyan/isce_sat2/contributors/ben_rp/data/vectors/Study-sites.shp'
-#     file2 =  '/home/jovyan/isce_sat2/contributors/ben_rp/data/vectors/Study-sites.shp'
-    
-#     in_dict = {'site1':file1,'site2':file2}
     #from download uavsar we will get a dictionary like {site:geojson or shp}
     # poly_dict = download_uavsar(args)
     types = {'confidence':{'res': 50, 'len':100, 'conf':True}, 'sd':{'res': 20, 'len':40, 'conf':False}}
-    polys = pickle.load(open('../data/bounds.pkl', 'rb'))
+    print(os.getcwd())
+    polys = pickle.load(open('data/bounds.pkl', 'rb'))
+    
+
     for k, v in types.items():
         download_icesat2(polys, directory = os.path.join('/home/jovyan/isce_sat2/data/', k), res = v['res'], length = v['len'], confidence = v['conf'])

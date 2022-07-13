@@ -4,16 +4,16 @@ Isce_Sat2 is a project to explore the data fusion possibilities between the ICES
 
 ## Collaborators
 (Add you names and affiliations below)
-Hannah Besso (University of Washington)
-Zach Keskinen (Boise State University)
-Jack
-Naheem
-Young
-Ben
-Sam
-Quinn
-Mia
-Karina
+- Hannah Besso (University of Washington)
+- Zach Keskinen (Boise State University)
+- Jack
+- Naheem
+- Young
+- Ben
+- Sam
+- Quinn
+- Mia
+- Karina
 
 ## Research Motivations
 

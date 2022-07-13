@@ -25,29 +25,34 @@ def download_icesat2(poly_dict, directory='/tmp/is2', conf=2, length=100.0, res=
     os.makedirs(directory, exist_ok=True)
     icesat2.init("icesat2sliderule.org", verbose=verbose)
     for name, poly in poly_dict.items():
-        print(f'Starting on {name}'.center(50, '-'))
-        #temp- convert shapefile to geojson
-        # poly = gpd.read_file(poly).geometry.exterior
-        # print(poly.head())# poly=gpd.read_file(poly).to_file('myshpfile.geojson', driver='GeoJSON')
-        poly = icesat2.toregion(gpd.GeoDataFrame([poly], index = [0], columns = ['geometry']))[0]
-        result = gpd.GeoDataFrame()
-        for conf in range(2,5):
-            parms = {"poly": poly,
-            "srt": icesat2.SRT_LAND,
-            "atl08_class": "atl08_ground",
-            "cnf": [conf],
-            "len": length,
-            "res": res,
-            "maxi": 1,
-            "t0":'2018-10-01T00:00:00Z',
-            "t1":'2022-04-30T00:00:00Z'}
-            rsps = icesat2.atl06p(parms)
-            rsps['confidence'] = conf
-            result = result.append(rsps)
-        name = name.replace(' ','')
-        name = name.replace(',','')
-        with open(os.path.join(directory,f'{name}_atl06sr.pkl'), 'wb') as f:
-            pickle.dump(result, f)
+        out_fp = os.path.join(directory,f'{name}_atl06sr.pkl')
+        if not os.path.exists(out_fp):
+            print(f'Starting on {name}'.center(50, '-'))
+            #temp- convert shapefile to geojson
+            # poly = gpd.read_file(poly).geometry.exterior
+            # print(poly.head())# poly=gpd.read_file(poly).to_file('myshpfile.geojson', driver='GeoJSON')
+            poly = icesat2.toregion(gpd.GeoDataFrame([poly], index = [0], columns = ['geometry']))[0]
+            result = gpd.GeoDataFrame()
+            for conf in range(2,5):
+                parms = {"poly": poly,
+                "srt": icesat2.SRT_LAND,
+                "atl08_class": "atl08_ground",
+                "cnf": [conf],
+                "len": length,
+                "res": res,
+                "maxi": 1,
+                "t0":'2018-10-01T00:00:00Z',
+                "t1":'2022-04-30T00:00:00Z'}
+                rsps = icesat2.atl06p(parms)
+                rsps['confidence'] = conf
+                result = result.append(rsps)
+            name = name.replace(' ','')
+            name = name.replace(',','')
+
+            with open(out_fp, 'wb') as f:
+                pickle.dump(result, f)
+        else:
+            print(f'{name} already exists. Skipping...')
                             
 
 if __name__ == '__main__':

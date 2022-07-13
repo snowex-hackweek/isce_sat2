@@ -24,11 +24,12 @@ def download_uavsar(args):
 def download_icesat2(poly_dict, directory='/tmp/is2', conf=2, length=100.0, res=50.0):
     os.makedirs(directory, exist_ok=True)
     icesat2.init("icesat2sliderule.org", verbose=False)
-    for name,poly in poly_dict.items():
+    for name, poly in poly_dict.items():
         
         #temp- convert shapefile to geojson
         # poly = gpd.read_file(poly).geometry.exterior
         # print(poly.head())# poly=gpd.read_file(poly).to_file('myshpfile.geojson', driver='GeoJSON')
+        poly = icesat2.toregion(gpd.GeoDataFrame([poly], index = [0], columns = ['geometry']))[0]
         res = gpd.GeoDataFrame()
         for conf in range(2,5):
             parms = {"poly": poly,
@@ -43,6 +44,8 @@ def download_icesat2(poly_dict, directory='/tmp/is2', conf=2, length=100.0, res=
             rsps = icesat2.atl06p(parms)
             rsps['confidence'] = conf
             res = res.append(rsps)
+    name = name.replace(' ','')
+    name = name.replace(',','')
     res.to_file(os.path.join(directory,f'{name}_atl06sr.geojson'))
                             
 

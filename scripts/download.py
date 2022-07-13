@@ -5,6 +5,8 @@ import geopandas as gpd
 import contextily as cx
 import os
 import warnings
+import pickle 
+
 warnings.simplefilter(action='ignore', category=FutureWarning)
 
 """
@@ -23,8 +25,9 @@ def download_icesat2(poly_dict, directory='/tmp/is2', conf=2, length=100.0, res=
     os.makedirs(directory, exist_ok=True)
     icesat2.init("icesat2sliderule.org", verbose=False)
     for name,poly in poly_dict.items():
+        
         #temp- convert shapefile to geojson
-        poly = gpd.read_file(poly).geometry.exterior
+        # poly = gpd.read_file(poly).geometry.exterior
         # print(poly.head())# poly=gpd.read_file(poly).to_file('myshpfile.geojson', driver='GeoJSON')
         res = gpd.GeoDataFrame()
         for conf in range(2,5):
@@ -45,11 +48,12 @@ def download_icesat2(poly_dict, directory='/tmp/is2', conf=2, length=100.0, res=
 
 if __name__ == '__main__':
     
-    file1 =  '/home/jovyan/isce_sat2/contributors/ben_rp/data/vectors/Study-sites.shp'
-    file2 =  '/home/jovyan/isce_sat2/contributors/ben_rp/data/vectors/Study-sites.shp'
+#     file1 =  '/home/jovyan/isce_sat2/contributors/ben_rp/data/vectors/Study-sites.shp'
+#     file2 =  '/home/jovyan/isce_sat2/contributors/ben_rp/data/vectors/Study-sites.shp'
     
-    in_dict = {'site1':file1,'site2':file2}
+#     in_dict = {'site1':file1,'site2':file2}
     #from download uavsar we will get a dictionary like {site:geojson or shp}
     # poly_dict = download_uavsar(args)
+    polys = pickle.load(open('/home/jovyan/isce_sat2/data/bounds.pkl', 'rb'))
     
-    download_icesat2(in_dict)
+    download_icesat2(polys)

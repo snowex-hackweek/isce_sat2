@@ -1,0 +1,10 @@
+wget http://uavsar.asfdaac.alaska.edu/UA_stlake_27129_21020-024_21022-001_0006d_s01_L090_01/stlake_27129_21020-024_21022-001_0006d_s01_L090HH_01.cor.grd
+wget http://uavsar.asfdaac.alaska.edu/UA_stlake_27129_21020-024_21022-001_0006d_s01_L090_01/stlake_27129_21020-024_21022-001_0006d_s01_L090HH_01.ann
+wget http://uavsar.asfdaac.alaska.edu/UA_alamos_35915_20005-003_20008-000_0007d_s01_L090_01/alamos_35915_20005-003_20008-000_0007d_s01_L090HH_01.cor.grd
+wget http://uavsar.asfdaac.alaska.edu/UA_alamos_35915_20005-003_20008-000_0007d_s01_L090_01/alamos_35915_20005-003_20008-000_0007d_s01_L090HH_01.ann
+wget http://uavsar.asfdaac.alaska.edu/UA_dorado_34017_20014-002_20016-000_0014d_s01_L090_01/dorado_34017_20014-002_20016-000_0014d_s01_L090HH_01.cor.grd
+wget http://uavsar.asfdaac.alaska.edu/UA_dorado_34017_20014-002_20016-000_0014d_s01_L090_01/dorado_34017_20014-002_20016-000_0014d_s01_L090HH_01.ann
+wget http://uavsar.asfdaac.alaska.edu/UA_donner_03904_20014-003_20016-007_0014d_s01_L090_01/donner_03904_20014-003_20016-007_0014d_s01_L090HH_01.cor.grd
+wget http://uavsar.asfdaac.alaska.edu/UA_donner_03904_20014-003_20016-007_0014d_s01_L090_01/donner_03904_20014-003_20016-007_0014d_s01_L090HH_01.ann
+wget http://uavsar.asfdaac.alaska.edu/UA_sierra_17305_20014-000_20016-005_0014d_s01_L090_01/sierra_17305_20014-000_20016-005_0014d_s01_L090HH_01.cor.grd
+wget http://uavsar.asfdaac.alaska.edu/UA_sierra_17305_20014-000_20016-005_0014d_s01_L090_01/sierra_17305_20014-000_20016-005_0014d_s01_L090HH_01.ann

@@ -24,6 +24,7 @@ wheels/
 .installed.cfg
 *.egg
 MANIFEST
+.nfsa87b1572e91b80c000000008
 
 # PyInstaller
 #  Usually these files are written by a python script from a template

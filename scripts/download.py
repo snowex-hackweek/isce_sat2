@@ -66,6 +66,6 @@ if __name__ == '__main__':
     #from download uavsar we will get a dictionary like {site:geojson or shp}
     # poly_dict = download_uavsar(args)
     types = {'confidence':{'res': 50, 'len':100, 'conf':True}, 'sd':{'res': 20, 'len':40, 'conf':False}}
-    polys = pickle.load(open('/Users/zachkeskinen/Documents/isce_sat2/data/bounds.pkl', 'rb'))
+    polys = pickle.load(open('../data/bounds.pkl', 'rb'))
     for k, v in types.items():
         download_icesat2(polys, directory = os.path.join('/tmp/is2', k), res = v['res'], length = v['len'], confidence = v['conf'])

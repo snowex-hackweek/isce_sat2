@@ -14,6 +14,8 @@ UAVSAR CODE TO GET COHERENCE AND BOUNDING BOX GEOJSON
 """
 
 def download_uavsar(args):
+    # col = UavsarCollection(collection = 'Grand Mesa, CO', work_dir = '~/Downloads/', dates = ('2019-12-01', 'today'))
+    # col.collection_to_tiffs()
         """
         use code from Jack's group
         """
@@ -27,9 +29,6 @@ def download_icesat2(poly_dict, directory='/tmp/is2', length=100.0, res=50.0, ve
         out_fp = os.path.join(directory,f'{name}_atl06sr.pkl')
         if not os.path.exists(out_fp):
             print(f'Starting on {name}'.center(50, '-'))
-            #temp- convert shapefile to geojson
-            # poly = gpd.read_file(poly).geometry.exterior
-            # print(poly.head())# poly=gpd.read_file(poly).to_file('myshpfile.geojson', driver='GeoJSON')
             poly = icesat2.toregion(gpd.GeoDataFrame([poly], index = [0], columns = ['geometry']))[0]
             result = gpd.GeoDataFrame()
             conf_range = range(2,5)

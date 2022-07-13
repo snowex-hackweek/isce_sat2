@@ -114,3 +114,7 @@ venv.bak/
 
 # os - mac
 *.DS_Store
+
+#data
+isce_sat2/contributors/naheem/download_files
+contributors/naheem/download_files/

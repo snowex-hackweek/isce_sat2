@@ -29,7 +29,9 @@ def download_icesat2(poly_dict, directory='/tmp/is2', length=100.0, res=50.0, ve
         out_fp = os.path.join(directory,f'{name}_atl06sr.pkl')
         if not os.path.exists(out_fp):
             print(f'Starting on {name}'.center(50, '-'))
-            poly = icesat2.toregion(gpd.GeoDataFrame([poly], index = [0], columns = ['geometry']))[0]
+            print(poly)
+            poly = icesat2.toregion(gpd.GeoDataFrame([poly], index = [0], columns = ['geometry']))['poly']
+            print('this looks like:',poly)
             result = gpd.GeoDataFrame()
             conf_range = range(2,5)
             if not confidence:
@@ -61,8 +63,7 @@ if __name__ == '__main__':
     #from download uavsar we will get a dictionary like {site:geojson or shp}
     # poly_dict = download_uavsar(args)
     types = {'confidence':{'res': 50, 'len':100, 'conf':True}, 'sd':{'res': 20, 'len':40, 'conf':False}}
-    print(os.getcwd())
-    polys = pickle.load(open('data/bounds.pkl', 'rb'))
+    polys = pickle.load(open('/home/jovyan/isce_sat2/data/bounds.pkl', 'rb'))
     
 
     for k, v in types.items():

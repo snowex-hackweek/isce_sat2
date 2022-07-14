@@ -4,8 +4,10 @@ import numpy as np
 import geopandas as gpd
 import contextily as cx
 import os
+from os.path import join, exists, basename
 import warnings
 import pickle 
+from glob import glob
 
 warnings.simplefilter(action='ignore', category=FutureWarning)
 
@@ -30,7 +32,7 @@ def download_icesat2(poly_dict, directory='/tmp/is2', length=100.0, res=50.0, ve
         if not os.path.exists(out_fp):
             print(f'Starting on {name}'.center(50, '-'))
             #note that there is an issue here between os'. When running on a jupyter hub we indexed by                 #['poly'] whereas on a mac local machine we indexed by [0]
-            poly = icesat2.toregion(gpd.GeoDataFrame([poly], index = [0], columns = ['geometry']))['poly']
+            poly = icesat2.toregion(poly)['poly']
             print('this looks like:',poly)
             result = gpd.GeoDataFrame()
             conf_range = range(2,5)
@@ -62,9 +64,13 @@ if __name__ == '__main__':
     
     #from download uavsar we will get a dictionary like {site:geojson or shp}
     # poly_dict = download_uavsar(args)
+    polys = {}
+    for fp in glob(join('data/uavsar_shape_files', '*.shp')):
+        name = basename(fp).split('_')[0]
+        polys[name] = fp
     types = {'confidence':{'res': 50, 'len':100, 'conf':True}, 'sd':{'res': 20, 'len':40, 'conf':False}}
-    polys = pickle.load(open('/home/jovyan/isce_sat2/data/bounds.pkl', 'rb'))
+    polys = pickle.load(open('data/bounds.pkl', 'rb'))
     
 
     for k, v in types.items():
-        download_icesat2(polys, directory = os.path.join('/home/jovyan/isce_sat2/data/', k), res = v['res'], length = v['len'], confidence = v['conf'])
+        download_icesat2(polys, directory = os.path.join('/tmp/is2', k), res = v['res'], length = v['len'], confidence = v['conf'])

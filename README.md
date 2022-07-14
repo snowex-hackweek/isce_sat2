@@ -3,6 +3,7 @@
 `isce_sat2` (a play on the InSAR processing software [ISCE2](https://github.com/isce-framework/isce2) and ICESat-2) is a project to explore the data fusion possibilities between the ICESat-2 space-based lidar, UAVSAR, and future NISAR based L-band InSAR for snow water storage measurements. 
 
 ## Collaborators
+<<<<<<< HEAD
 
 - [Hannah Besso](https://github.com/bessoh2) (University of Washington)
 - [Zach Keskinen](https://github.com/ZachKeskinen) (Boise State University)
@@ -14,6 +15,19 @@
 - [Quinn Brencher](https://github.com/gbrencher) (University of Washington)
 - [Mia MiaVanderwilt](https://github.com/MiaVanderwilt) (University of Colorado, Boulder)
 - [Karina Zikan](https://github.com/khzikan)
+=======
+(Add you names and affiliations below)
+- Hannah Besso (University of Washington)
+- Zach Keskinen (Boise State University)
+- Jack Tarricone (University of Nevada, Reno)
+- Naheem
+- Young
+- Ben
+- Sam
+- Quinn
+- Mia
+- Karina Zikan (Boise State University)
+>>>>>>> bb42111e1c655de30bc563feb57086a4da3a421e
 
 ## Research Motivations
 
@@ -25,7 +39,7 @@
 
 [UAVSAR](https://uavsar.jpl.nasa.gov/education/what-is-uavsar.html) is a low frequency plane-based synthetic aperature radar. UAVSAR stands for "Uninhabited Aerial Vehicle Synthetic Aperature Radar". It captures imagery using a L-band radar. This low frequency means it can penetrate into and through clouds, vegetation, and snow.
 
-[ICESat2](https://icesat-2.gsfc.nasa.gov/) ...
+[ICESat2](https://icesat-2.gsfc.nasa.gov/) 
 
 ## Specific Questions
 

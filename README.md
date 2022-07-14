@@ -13,7 +13,7 @@
 - [Sam Neitlich](https://github.com/samsamsam34) (Montana State University)
 - [Quinn Brencher](https://github.com/gbrencher) (University of Washington)
 - [Mia MiaVanderwilt](https://github.com/MiaVanderwilt) (University of Colorado, Boulder)
-- [Karina Zikan](https://github.com/khzikan)
+- [Karina Zikan](https://github.com/khzikan) (Boise State University)
 
 ## Research Motivations
 

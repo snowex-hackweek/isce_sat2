@@ -27,6 +27,14 @@
 
 [ICESat-2](https://icesat-2.gsfc.nasa.gov/) carries the Advanced Topographic Laser Altimeter System (ATLAS), a photon counting LiDAR instrument. The ATLAS laser operates at 532 nanometers, a bright green color, and is split into 3 main tracks roughly 3km apart each with a weak and strong beam. In this project we worked with the ATL03, ATL06, and ATL08 products. ATL03 gives the global geolocated photon cloud, ATL06 gives land ice elevation, and ATL08 gives land water vegetation elevation.
 
+## Aditional Resources 
+SlideRule
+[Sliderule example notebook](https://github.com/ICESat2-SlideRule/sliderule-python/blob/main/examples/api_widgets_demo.ipynb)
+
+[UAVSAR InSAR Data Types]
+(https://uavsar.jpl.nasa.gov/science/documents/rpi-format.html)
+
+
 ## Specific Questions
 
 1. Can we use ICESat-2 to constrain phase change in UAVSAR pairs?

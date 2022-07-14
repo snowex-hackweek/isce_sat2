@@ -32,6 +32,7 @@ def download_icesat2(poly_dict, directory='/tmp/is2', length=100.0, res=50.0, ve
         if not os.path.exists(out_fp):
             print(f'Starting on {name}'.center(50, '-'))
             #note that there is an issue here between os'. When running on a jupyter hub we indexed by                 #['poly'] whereas on a mac local machine we indexed by [0]
+            print(poly)
             poly = icesat2.toregion(poly)['poly']
             print('this looks like:',poly)
             result = gpd.GeoDataFrame()
@@ -69,7 +70,7 @@ if __name__ == '__main__':
         name = basename(fp).split('_')[0]
         polys[name] = fp
     types = {'confidence':{'res': 50, 'len':100, 'conf':True}, 'sd':{'res': 20, 'len':40, 'conf':False}}
-    polys = pickle.load(open('data/bounds.pkl', 'rb'))
+    # polys = pickle.load(open('data/bounds.pkl', 'rb'))
     
 
     for k, v in types.items():

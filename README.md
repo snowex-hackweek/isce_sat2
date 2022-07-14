@@ -25,7 +25,7 @@
 
 [UAVSAR](https://uavsar.jpl.nasa.gov/education/what-is-uavsar.html) is a low frequency plane-based synthetic aperature radar. UAVSAR stands for "Uninhabited Aerial Vehicle Synthetic Aperature Radar". It captures imagery using a L-band radar. This low frequency means it can penetrate into and through clouds, vegetation, and snow.
 
-[ICESat-2](https://icesat-2.gsfc.nasa.gov/) or the "Ice, Cloud, and Land Elevation Satellite-2" carries ATLAS, a photon counting LiDAR instrument. The ATLAS laser operates at 532 nanometers, a bright green color, and is split into 3 main tracks each with a weak and strong beam. In this project we work with the ATL03, ATL06, and ATl08 products. ATL03 gives the origonal photon cloud, ATL06 gives land ice elevation, and ATL08 gives land water vegetation elevation.
+[ICESat-2](https://icesat-2.gsfc.nasa.gov/) carries the Advanced Topographic Laser Altimeter System (ATLAS), a photon counting LiDAR instrument. The ATLAS laser operates at 532 nanometers, a bright green color, and is split into 3 main tracks roughly 3km apart each with a weak and strong beam. In this project we worked with the ATL03, ATL06, and ATL08 products. ATL03 gives the global geolocated photon cloud, ATL06 gives land ice elevation, and ATL08 gives land water vegetation elevation.
 
 ## Specific Questions
 

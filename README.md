@@ -13,7 +13,7 @@
 - Sam
 - Quinn
 - Mia
-- Karina
+- Karina Zikan (Boise State University)
 
 ## Research Motivations
 
@@ -25,7 +25,7 @@
 
 [UAVSAR](https://uavsar.jpl.nasa.gov/education/what-is-uavsar.html) is a low frequency plane-based synthetic aperature radar. UAVSAR stands for "Uninhabited Aerial Vehicle Synthetic Aperature Radar". It captures imagery using a L-band radar. This low frequency means it can penetrate into and through clouds, vegetation, and snow.
 
-[ICESat2](https://icesat-2.gsfc.nasa.gov/) ...
+[ICESat2](https://icesat-2.gsfc.nasa.gov/) 
 
 ## Specific Questions
 

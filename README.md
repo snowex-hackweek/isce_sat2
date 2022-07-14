@@ -41,6 +41,9 @@
 ### `contributors`
 Each team member has it's own folder under contributors, where they can work on their contribution. Having a dedicated folder for each person helps to prevent conflicts when merging with the main branch.
 
+### `data`
+Pickled data files
+
 ### `notebooks`
 Notebooks that are considered delivered results for the project should go in here.
 

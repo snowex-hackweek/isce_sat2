@@ -1,4 +1,5 @@
 from sliderule import icesat2
+from uavsar_pytools import UavsarCollection
 import matplotlib.pyplot as plt
 import numpy as np
 import geopandas as gpd
@@ -16,13 +17,8 @@ UAVSAR CODE TO GET COHERENCE AND BOUNDING BOX GEOJSON
 """
 
 def download_uavsar(args):
-    # col = UavsarCollection(collection = 'Grand Mesa, CO', work_dir = '~/Downloads/', dates = ('2019-12-01', 'today'))
-    # col.collection_to_tiffs()
-        """
-        use code from Jack's group
-        """
-        pass
-        return 
+    col = UavsarCollection(collection = 'Grand Mesa, CO', work_dir = '~/Downloads/', dates = ('2019-12-01', 'today'))
+    col.collection_to_tiffs()
     
 def download_icesat2(poly_dict, directory='/tmp/is2', length=100.0, res=50.0, verbose=False, confidence = False):
     os.makedirs(directory, exist_ok=True)

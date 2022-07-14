@@ -29,7 +29,7 @@ def download_icesat2(poly_dict, directory='/tmp/is2', length=100.0, res=50.0, ve
         out_fp = os.path.join(directory,f'{name}_atl06sr.pkl')
         if not os.path.exists(out_fp):
             print(f'Starting on {name}'.center(50, '-'))
-            print(poly)
+            #note that there is an issue here between os'. When running on a jupyter hub we indexed by                 #['poly'] whereas on a mac local machine we indexed by [0]
             poly = icesat2.toregion(gpd.GeoDataFrame([poly], index = [0], columns = ['geometry']))['poly']
             print('this looks like:',poly)
             result = gpd.GeoDataFrame()

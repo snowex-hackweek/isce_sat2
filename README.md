@@ -3,17 +3,17 @@
 `isce_sat2` (a play on the InSAR processing software [ISCE2](https://github.com/isce-framework/isce2) and ICESat-2) is a project to explore the data fusion possibilities between the ICESat-2 space-based lidar, UAVSAR, and future NISAR based L-band InSAR for snow water storage measurements. 
 
 ## Collaborators
-(Add you names and affiliations below)
-- Hannah Besso (University of Washington)
-- Zach Keskinen (Boise State University)
-- Jack Tarricone (University of Nevada, Reno)
-- Naheem
-- Young
-- Ben
-- Sam
-- Quinn
-- Mia
-- Karina
+
+- [Hannah Besso](https://github.com/bessoh2) (University of Washington)
+- [Zach Keskinen](https://github.com/ZachKeskinen) (Boise State University)
+- [Jack Tarricone](https://github.com/jacktarricone) (University of Nevada, Reno)
+- [Naheem Adebisi](https://github.com/Surfix) (Boise State University)
+- [Young Koo](https://github.com/YoungHyunKoo) (University of Texas, San Antonio)
+- [Ben Roberts Pierel](https://github.com/brobertspierel) (Oregon State University)
+- [Sam Neitlich](https://github.com/samsamsam34) (Montana State University)
+- [Quinn Brencher](https://github.com/gbrencher) (University of Washington)
+- [Mia MiaVanderwilt](https://github.com/MiaVanderwilt) (University of Colorado, Boulder)
+- [Karina Zikan](https://github.com/khzikan)
 
 ## Research Motivations
 

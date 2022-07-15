@@ -12,7 +12,7 @@
 - [Ben Roberts Pierel](https://github.com/brobertspierel) (Oregon State University)
 - [Sam Neitlich](https://github.com/samsamsam34) (Montana State University)
 - [Quinn Brencher](https://github.com/gbrencher) (University of Washington)
-- [Mia MiaVanderwilt](https://github.com/MiaVanderwilt) (University of Colorado, Boulder)
+- [Mia Vanderwilt](https://github.com/MiaVanderwilt) (University of Colorado, Boulder)
 - [Karina Zikan](https://github.com/khzikan) (Boise State University)
 
 ## Research Motivations
@@ -25,7 +25,14 @@
 
 [UAVSAR](https://uavsar.jpl.nasa.gov/education/what-is-uavsar.html) is a low frequency plane-based synthetic aperature radar. UAVSAR stands for "Uninhabited Aerial Vehicle Synthetic Aperature Radar". It captures imagery using a L-band radar. This low frequency means it can penetrate into and through clouds, vegetation, and snow.
 
-[ICESat2](https://icesat-2.gsfc.nasa.gov/) ...
+[ICESat-2](https://icesat-2.gsfc.nasa.gov/) carries the Advanced Topographic Laser Altimeter System (ATLAS), a photon counting LiDAR instrument. The ATLAS laser operates at 532 nanometers, a bright green color, and is split into 3 main tracks roughly 3km apart each with a weak and strong beam. In this project we worked with the ATL03, ATL06, and ATL08 products. ATL03 gives the global geolocated photon cloud, ATL06 gives land ice elevation, and ATL08 gives land water vegetation elevation.
+
+## Aditional Resources 
+Sliderule example notebook: [https://github.com/ICESat2-SlideRule/sliderule-python/blob/main/examples/api_widgets_demo.ipynb](https://github.com/ICESat2-SlideRule/sliderule-python/blob/main/examples/api_widgets_demo.ipynb)
+
+UAVSAR InSAR Data Types:
+[https://uavsar.jpl.nasa.gov/science/documents/rpi-format.html](https://uavsar.jpl.nasa.gov/science/documents/rpi-format.html)
+
 
 ## Specific Questions
 
@@ -40,6 +47,9 @@
 
 ### `contributors`
 Each team member has it's own folder under contributors, where they can work on their contribution. Having a dedicated folder for each person helps to prevent conflicts when merging with the main branch.
+
+### `data`
+Pickled data files
 
 ### `notebooks`
 Notebooks that are considered delivered results for the project should go in here.
